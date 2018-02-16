@@ -9,16 +9,16 @@ export class RecipeService {
     recipesChanged = new Subject<Recipe[]>();
 
     private recipes: Recipe[] = [
-        new Recipe('A Test Resipe',
-                 'This is simply a test', 
-                'https://rms.knorrwhatsfordinner.co.za/images/defaults/recipe.jpg',
+        new Recipe('Tasty Schnitzel',
+                 'This is super-tasty Schnitzel', 
+                'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDFf4DSvi75kW-9727_1KanVzIkiAcpEQp34lUXr45ehMcJ7EO',
                 [
                     new Ingredient('Meat', 1),
                     new Ingredient('French Fries', 20)
                 ]),
-        new Recipe('Another Test Resipe', 
-        'This is simply a test', 
-          'https://rms.knorrwhatsfordinner.co.za/images/defaults/recipe.jpg',
+        new Recipe('Burger', 
+        'Big Fat Burger', 
+          'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFC4IxrwZLvSFmkk2yr2gOduli10OyfBmhYiURBSKe7ayibFJM',
         [
             new Ingredient('Buns', 2),
             new Ingredient('Meat', 2)
@@ -26,6 +26,12 @@ export class RecipeService {
       ];
 
     constructor(private slService: ShoppingListService) {}  
+
+    setRecipes(recipes: Recipe[]) {
+        this.recipes = recipes;
+        this.recipesChanged.next(this.recipes.slice());
+    }
+
     getRecipes() {
         return this.recipes.slice();
     }
