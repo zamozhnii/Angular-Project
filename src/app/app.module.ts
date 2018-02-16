@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeService } from './recipes/recipe.servise';
-import { FilterPipe } from './filter.pipe';
 import { DataStorageService } from './shared/data-storage.service';
 
 
@@ -35,7 +34,6 @@ import { DataStorageService } from './shared/data-storage.service';
     DropdownDirective,
     RecipeStartComponent,
     RecipeEditComponent,
-    FilterPipe
   ],
   imports: [
     BrowserModule,
